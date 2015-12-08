@@ -88,7 +88,11 @@ function init() {
 }
 
 function handleFireButton() {
-	//code to go here
+	var guessInput = document.getElementById("guessInput");
+	var guess = guessInput.value;
+	controller.processGuess(guess);
+
+	guessInput.value = "";
 }
 
 window.onload = init; 
