@@ -67,7 +67,7 @@ function parseGuess(guess) {
 
 		if (isNaN(row) || isNaN(column)) {
 			alert("Oops, that is not on the board.");	
-		} else if (row < 0 || row >= model.boardSize || column < 0 || column >= boardSize ){
+		} else if (row < 0 || row >= 7 || column < 0 || column >= 7){
 			alert("Oops that is off the board!");
 		} else {
 			return row + column;
