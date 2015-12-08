@@ -51,7 +51,11 @@ var model = {
 var controller = {
 	guesses: 0,
 	processGuess: function(guess) {
-		//more code here
+		var location = parseGuess(guess);
+		if (location) {
+			this.guesses++
+			var hit = model.fire(location);
+		}
 	},
 
 };
