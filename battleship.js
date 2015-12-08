@@ -65,7 +65,11 @@ function parseGuess(guess) {
 		var row = alphabet.indexOf(firstChar);
 		var column = guess.charAt(1);
 
-		if 
+		if (isNaN(row) || isNaN(column)) {
+			alert("Oops, that is not on the board.");	
+		} else if (row < 0 || row >= model.boardSize || column < 0 || column >= boardSize ){
+			alert("Oops that is off the board!");
+		}
 	}
 }
 
