@@ -55,10 +55,18 @@ var controller = {
 		if (location) {
 			this.guesses++
 			var hit = model.fire(location);
+			if (hit && model.shipsSunk === model.numShips) {
+				view.displayMessage("You Sank all of my Battleships, in " + this.guesses + " guesses");
+			}
 		}
-	},
-
+	}
 };
+
+controller.processGuess("A0");
+
+controller.processGuess("A6");
+controller.processGuess("B6");
+controller.processGuess("C6");
 
 function parseGuess(guess) {
 	var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
@@ -80,7 +88,6 @@ function parseGuess(guess) {
 	return null;
 }
 
-console.log(parseGuess("A7"));
 
 
 
