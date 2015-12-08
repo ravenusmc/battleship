@@ -48,12 +48,9 @@ var model = {
 	} 
 };
 
-model.fire("53");
-
-model.fire("26");
-model.fire("06");
-model.fire("16");
-
-model.fire("24");
-model.fire("34");
-model.fire("44");
+var controller = {
+	guesses: 0
+	processGuess: function(guess) {
+		
+	}
+}
