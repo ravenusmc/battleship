@@ -16,14 +16,6 @@ var view = {
 	}
 };
 
-// view.displayMiss("00");
-// view.displayHit("34");
-// view.displayMiss("55");
-// view.displayHit("12");
-// view.displayMiss("25");
-// view.displayHit("26");
-// view.displayMessage("hello is this working?");
-
 var model = {
 	boardSize: 7,
 	numShips: 3,
@@ -35,14 +27,21 @@ var model = {
 	fire: function(guess) {
 		for (var i = 0; i < this.numShips; i++) {
 			var ship = this.ship = this.ships[i];
-			var locations = ship.locations
-			var index = locations.indexof(guess);
+			var index = ship.locations.indexof(guess);
 			if (index >= 0 ) {
 				ship.hits[index] = "hit";
+				view.displayHit(guess);
+				view.displayMessage("hit");
+				if (this.isSunk(ship)) {
+					view.displayMessage("You Sank my battleship!");
+					this.shipsSunk++;
+				}
 				return true; 
 			}
 		}
 		return false 
-	} 
+	},
+	isSunk: function(ship) {
 
+	} 
 };
