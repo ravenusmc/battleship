@@ -62,12 +62,6 @@ var controller = {
 	}
 };
 
-controller.processGuess("A0");
-
-controller.processGuess("A6");
-controller.processGuess("B6");
-controller.processGuess("C6");
-
 function parseGuess(guess) {
 	var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 	if (guess === null || guess.length !== 2) {
@@ -87,6 +81,17 @@ function parseGuess(guess) {
 	}
 	return null;
 }
+
+function init() {
+	var fireButton = document.getElementById('fireButton');
+	fireButton.onclick = handleFireButton;
+}
+
+function handleFireButton() {
+	//code to go here
+}
+
+window.onload = init; 
 
 
 
