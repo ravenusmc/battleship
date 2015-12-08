@@ -69,13 +69,24 @@ var model = {
 		var newShipLocations = [];
 		for (var i = 0; i < this.shipLength; i++) {
 			if (direction === 1) {
-				//code
+				newShipLocations.push(row + "" + (col + i));
 			}else {
-				//code
+				newShipLocations.push((row + i) + "" + col);
 			}
 		}
 		return newShipLocations;
 	}, 
+	collision: function(locations) {
+		for (var i = 0; i < this.numShips; i++){
+			var ship = model.ships[i];
+			for (var j = 0; j < locations.length; j++) {
+				if (ship.locations.indexOf(locations[j]) >= 0) {
+					return true; 
+				}
+			}
+		}
+		return false;
+	}
 };
 
 var controller = {
