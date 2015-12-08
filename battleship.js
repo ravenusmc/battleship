@@ -27,7 +27,7 @@ var model = {
 	fire: function(guess) {
 		for (var i = 0; i < this.numShips; i++) {
 			var ship = this.ship = this.ships[i];
-			var index = ship.locations.indexof(guess);
+			var index = ship.locations.indexOf(guess);
 			if (index >= 0 ) {
 				ship.hits[index] = "hit";
 				view.displayHit(guess);
@@ -39,9 +39,21 @@ var model = {
 				return true; 
 			}
 		}
+		view.displayMiss(guess);
+		view.displayMessage("You Missed");
 		return false 
 	},
 	isSunk: function(ship) {
 
 	} 
 };
+
+model.fire("53");
+
+model.fire("26");
+model.fire("06");
+model.fire("16");
+
+model.fire("24");
+model.fire("34");
+model.fire("44");
