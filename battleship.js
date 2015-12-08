@@ -69,9 +69,14 @@ function parseGuess(guess) {
 			alert("Oops, that is not on the board.");	
 		} else if (row < 0 || row >= model.boardSize || column < 0 || column >= boardSize ){
 			alert("Oops that is off the board!");
+		} else {
+			return row + column;
 		}
 	}
+	return null;
 }
+
+console.log(parseGuess("A7"));
 
 
 
