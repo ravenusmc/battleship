@@ -49,8 +49,19 @@ var model = {
 };
 
 var controller = {
-	guesses: 0
+	guesses: 0,
 	processGuess: function(guess) {
-		
+		//more code here
+	},
+
+};
+
+function parseGuess(guess) {
+	var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+	if (guess === null || guess.length !== 2) {
+		alert("Oops, please enter a letter and a number on the keyboard!");
 	}
 }
+
+
+
